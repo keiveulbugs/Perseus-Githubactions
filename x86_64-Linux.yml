@@ -1,0 +1,25 @@
+name: x86_64-Linux
+
+on:
+  workflow_dispatch:
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Perseus install
+        run: cargo install perseus-cli
+      - name: Compile with perseus
+        run: |
+          perseus deploy
+          mkdir output_folder
+          mv pkg/ output_folder/
+      - uses: actions/upload-artifact@v3
+        with:
+          name: websitecompiled
+          path: output_folder/
