@@ -18,3 +18,11 @@ The current solutions to this is to disable the Tailwindcss plugin, compile the 
 using `.perseus/static/tailwind.css`
 
 
+# x86_64-linux
+
+This file compiles perseus to x86_64. It is tested and returns a PKG folder with everything you need.
+
+# Experimental
+
+This file should in theory compile to whatever target you specify. But while testing I ran out of Github action credits, so I have no idea if it works
+
